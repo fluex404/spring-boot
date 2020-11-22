@@ -14,4 +14,4 @@ import org.springframework.stereotype.Component;
 //    public void fixedRateSch() {
 //        System.out.println("fixedrate each 1 minite");
 //    }
-}
+//}
