@@ -2,12 +2,13 @@ package com.fluex404.springboot.controller;
 
 import com.fluex404.springboot.exception.ProductNotFoundException;
 import com.fluex404.springboot.response.Product;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,4 +34,10 @@ public class ProductController {
         Object result = productRepo.get(id);
         return ResponseEntity.ok(result);
     }
+
+    @PostMapping(value = "/product/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<?> uploadFile(@RequestParam("file")MultipartFile file) throws IOException {
+        return new ResponseEntity<>("file "+file.getOriginalFilename()+" upload successfully!", HttpStatus.OK);
+    }
+
  }
