@@ -1,10 +1,10 @@
-package com.fluex404.aurekaserver;
+package com.fluex404.eurekaclient;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AurekaserverApplicationTests {
+class EurekaclientApplicationTests {
 
 	@Test
 	void contextLoads() {
